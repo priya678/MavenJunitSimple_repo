@@ -3,11 +3,14 @@
   <groupId>Mave</groupId>
   <artifactId>HelloWorld2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-   <properties>
-        <!-- https://maven.apache.org/general.html#encoding-warning -->
+   <!--<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>-->
+   <properties>
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -24,7 +27,15 @@
     <build>
         <finalName>maven-unit-test</finalName>
         <plugins>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
