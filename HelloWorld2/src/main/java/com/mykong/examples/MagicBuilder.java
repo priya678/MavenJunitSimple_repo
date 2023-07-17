@@ -4,6 +4,8 @@ public class MagicBuilder {
 
 	
 	public static int getLucky(){
-		return 7 ;		
+		return 7 ;	
+
+//this is a comment		
 	}
 }
